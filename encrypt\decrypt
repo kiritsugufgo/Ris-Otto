@@ -1,1 +1,85 @@
+import string
+
+#huvu_message = raw_input("Input the message you want to encrypt: ")
+#huvu_key = input ("input the key (an integer value): ")
+
+
+def encrypt (message, key):
+
+    encr_message = ""
+    for character in message: 
+
+        if character in string.uppercase:
+            old_ascii_1 = ord(character)
+            new_ascii_1 = (old_ascii_1 + key - 65) % 26 + 65
+            new_char_1 = chr(new_ascii_1)
+            encr_message += new_char_1
+            
+            
+        elif character in string.lowercase: 
+            old_ascii_2 = ord(character)
+            new_ascii_2 = (old_ascii_2 + key - 97) % 26 + 97
+            new_char_2 = chr(new_ascii_2)
+            encr_message += new_char_2
+
+        else: 
+            encr_message += character
+
+    return encr_message
+
+#def decrypt (message,key):            den här fungerar också men stal av weber så vil hellst
+    #return encrypt(message, - key)    int anväda den
+
+def decrypt (message_2,key_2):
+
+    decr_message = ""
+    for character_2 in message_2: 
+
+        if character_2 in string.uppercase:
+            old_ascii_3 = ord(character_2)
+            new_ascii_3 = (old_ascii_3 - key_2 - 65) % 26 + 65
+            new_char_3 = chr(new_ascii_3)
+            decr_message += new_char_1
+            
+            
+        elif character_2 in string.lowercase: 
+            old_ascii_4 = ord(character_2)
+            new_ascii_4 = (old_ascii_4 - key_2 - 97) % 26 + 97
+            new_char_4 = chr(new_ascii_4)
+            decr_message += new_char_4
+
+        else: 
+            encr_message += character_2
+
+    return decr_message
+
+
+def break_crypt (message):
+    for i in range (1,27):
+        print "when key is...", i,"you'll get:", encrypt(message,i)
+
+
+
+
+
+huvu_message = raw_input("Input the message you want to encrypt: ")
+break_crypt (huvu_message)
+
+def main:
+
+    while True: 
+        
+        
+        if string.lower(choice) == 'd':
+            pass
+            
+        elif string.lower(choice) == 'e': 
+            pass
+
+        elif string.lower(choice) == 'b': 
+            pass
+
+        elif string.lower(choice) == 'q':
+            break
+
 
